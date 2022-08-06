@@ -1,14 +1,19 @@
-from src.app import db
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy_utils.types.choice import ChoiceType
+
+db = SQLAlchemy()
 
 
 class Car(db.Model):
     __tablename__ = 'cars'
+    __table_args__ = (
+        db.UniqueConstraint('state_number', 'region'),
+    )
 
     REGION_CODE = [
-        (1, 'Tashkent'),
-        (30, 'Samarkand'),
-        (80, 'Bukhara'),
+        ('01', 'Tashkent'),
+        ('30', 'Samarkand'),
+        ('80', 'Bukhara'),
     ]
 
     id = db.Column(db.Integer, primary_key=True)
@@ -32,4 +37,5 @@ class Car(db.Model):
 
 __all__ = (
     'Car',
+    'db'
 )
