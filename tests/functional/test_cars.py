@@ -21,5 +21,5 @@ def test_post_car():
     }
 
     with flask_app.test_client() as test_client:
-        response = test_client.post('/api/v1/cars/', data)
+        response = test_client.post('/api/v1/cars/', json=data)
         assert response.status_code == 201
