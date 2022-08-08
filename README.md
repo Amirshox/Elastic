@@ -15,7 +15,11 @@ cd Elastic
 ```
 
 ```bash
-python -m venv venv
+python3 -m venv venv
+```
+
+```bash
+source venv/bin/activate 
 ```
 
 ```bash
