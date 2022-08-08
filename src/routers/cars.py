@@ -32,11 +32,12 @@ def query(state_number, region):
         'query':
             {
                 "bool":
-                    {"must":
-                        [
-                            {"match": {"state_number": state_number}},
-                            {"match": {"region": region}}
-                        ]
+                    {
+                        "must":
+                            [
+                                {"match": {"state_number": state_number}},
+                                {"match": {"region": region}}
+                            ]
                     }
             }
     })
