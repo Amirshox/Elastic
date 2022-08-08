@@ -26,3 +26,41 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
+
+# API ENDPOINTS
+
+## GET
+
+[localhost:5000/api/v1/cars?key=<state_number>](localhost:5000/api/v1/cars?key=<state_number>)
+
+## POST
+
+[localhost:5000/api/v1/cars](localhost:5000/api/v1/cars)
+
+### body = {
+
+#### "state_number": "12345",
+
+#### "region": "01"
+
+#### "brand": "Corolla",
+
+#### "color": "red",
+
+### }
+
+## PUT
+
+[localhost:5000/api/v1/cars/<eid</](localhost:5000/api/v1/cars/<id>)
+
+### body = {
+
+#### "state_number": "12345",
+
+#### "region": "01"
+
+#### "brand": "Corolla",
+
+#### "color": "red",
+
+### }
