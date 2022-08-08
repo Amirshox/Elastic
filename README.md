@@ -1,6 +1,7 @@
 # ELASTIC
 
 ![python](https://img.shields.io/badge/-python-grey?style=for-the-badge&logo=python&logoColor=white&labelColor=306998)
+![flask](https://img.shields.io/badge/-flask-grey?style=for-the-badge&logo=flask&logoColor=white&labelColor=green)
 ![elasticsearch](https://img.shields.io/badge/-elasticsearch-grey?style=for-the-badge&logo=elasticsearch&logoColor=white&labelColor=red)
 
 ## <b>Installation</b> (For Linux)
