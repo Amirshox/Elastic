@@ -32,6 +32,8 @@ python app.py
 
 ## GET
 
+_**for searching use query parameter**_ `key`
+
 [localhost:5000/api/v1/cars?key=<state_number>](localhost:5000/api/v1/cars?key=<state_number>)
 
 ## POST
