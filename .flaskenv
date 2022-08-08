@@ -1,3 +1,3 @@
 export FLASK_DEBUG=True
-export FLASK_APP=src
-export SQLALCHEMY_DB_URI = postgresql://postgres:1@localhost:5432/elastic
+export FLASK_APP=src/app.py
+export SQLALCHEMY_DB_URI = postgresql://admin:1@localhost:5432/elastic

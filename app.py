@@ -3,9 +3,9 @@ import os
 from flask import Flask
 from flask.json import jsonify
 
-from models import db
-from routers import cars
-from constants.http_status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
+from src.models import db
+from src.routers import cars
+from src.constants.http_status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
 
 
 def create_app(test_config=None):

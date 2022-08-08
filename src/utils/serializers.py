@@ -1,4 +1,4 @@
-from models import Car
+from src.models import Car
 
 
 def car_to_dict(car: Car):
