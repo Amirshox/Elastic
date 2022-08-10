@@ -1,4 +1,4 @@
-from src.models.cars import Car
+from models.cars import Car
 
 
 def test_create_car():

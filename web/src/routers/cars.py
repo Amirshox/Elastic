@@ -1,3 +1,4 @@
+import os
 from uuid import uuid4
 
 from flask import Blueprint, request
@@ -19,7 +20,9 @@ from src.constants.http_status_codes import (
 
 cars = Blueprint("cars", __name__, url_prefix="/api/v1/cars")
 
-es = Elasticsearch("http://localhost:9200")
+es_host = os.environ['ELASTICSEARCH_URL']
+print('Elasticsearch host: {}'.format(es_host))
+es = Elasticsearch([es_host])
 
 try:
     es.indices.create(index="cars")

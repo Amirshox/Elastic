@@ -3,7 +3,6 @@ import os
 from flask import Flask
 from flask.json import jsonify
 
-from src.models import db
 from src.routers import cars
 from src.constants.http_status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
 
@@ -41,4 +40,4 @@ def create_app(test_config=None):
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
