@@ -15,6 +15,14 @@ cd Elastic
 ```
 
 ```bash
+python3 -m venv venv
+```
+
+```bash
+source venv/bin/activate 
+```
+
+```bash
 pip install -r requirements.txt
 ```
 
@@ -31,6 +39,8 @@ python app.py
 # API ENDPOINTS
 
 ## GET
+
+_**for searching use query parameter**_ `key`
 
 [localhost:5000/api/v1/cars?key=<state_number>](localhost:5000/api/v1/cars?key=<state_number>)
 
