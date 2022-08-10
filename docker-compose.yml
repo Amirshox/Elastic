@@ -20,15 +20,15 @@ services:
     ports:
       - 9200:9200
 
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.8.0
-    container_name: kibana
-    environment:
-      ELASTICSEARCH_URL: "http://elasticsearch:9200"
-    ports:
-      - 5601:5601
-    depends_on:
-      - elasticsearch
+#  kibana:
+#    image: docker.elastic.co/kibana/kibana:7.8.0
+#    container_name: kibana
+#    environment:
+#      ELASTICSEARCH_URL: "http://elasticsearch:9200"
+#    ports:
+#      - 5601:5601
+#    depends_on:
+#      - elasticsearch
 
   web:
     build: ./web

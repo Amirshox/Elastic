@@ -20,7 +20,7 @@ from src.constants.http_status_codes import (
 
 cars = Blueprint("cars", __name__, url_prefix="/api/v1/cars")
 
-es_host = os.environ['ELASTICSEARCH_URL']
+es_host = os.environ.get('ELASTICSEARCH_URL', "http://localhost:9200")
 print('Elasticsearch host: {}'.format(es_host))
 es = Elasticsearch([es_host])
 
