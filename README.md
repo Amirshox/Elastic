@@ -20,7 +20,3 @@ If the Flask application in `/web` uses `stdout` to generate log messages, the o
 ```
 docker-compose logs -f web
 ```
-
-## Updates on File Change
-
-Bind mounting `/web`, the Flask application directory, to the container in `docker-compose.yml` allows the container to access `/web` on the host file system. When the container starts, it will pick up changes to the mounted code files as they happen and update accordingly.
