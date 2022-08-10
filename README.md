@@ -1,77 +1,26 @@
-# ELASTIC
+# Elastic
 
-![python](https://img.shields.io/badge/-python-grey?style=for-the-badge&logo=python&logoColor=white&labelColor=306998)
-![flask](https://img.shields.io/badge/-flask-grey?style=for-the-badge&logo=flask&logoColor=white&labelColor=green)
-![elasticsearch](https://img.shields.io/badge/-elasticsearch-grey?style=for-the-badge&logo=elasticsearch&logoColor=white&labelColor=red)
+Run `build.sh` to spin up the containers using `docker-compose.yml`.
 
-## <b>Installation</b> (For Linux)
-
-```bash 
-git clone https://github.com/Amirshox/Elastic.git
-````
-
-```bash 
-cd Elastic
+```
+./build.sh
 ```
 
-```bash
-python3 -m venv venv
+| URL                     | Service       |
+|-------------------------|---------------|
+| `http://localhost:9200` | Elasticsearch |
+| `http://localhost:5000` | Flask         |
+
+Within other containers, Elasticsearch is accessed at `http://elasticsearch:9200`.
+
+## Instant Logging
+
+If the Flask application in `/web` uses `stdout` to generate log messages, the output will be captured by Docker instantly due to `PYTHONUNBUFFERED: 0` in `docker-compose.yml`. Running the following will allow you to view these dumped logs.
+
+```
+docker-compose logs -f web
 ```
 
-```bash
-source venv/bin/activate 
-```
+## Updates on File Change
 
-```bash
-pip install -r requirements.txt
-```
-
-### And you have to install Elasticsearch
-
-[https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
-
-### Run Flask server
-
-```bash
-python app.py
-```
-
-# API ENDPOINTS
-
-## GET
-
-_**for searching use query parameter**_ `key`
-
-[localhost:5000/api/v1/cars?key=<state_number>](localhost:5000/api/v1/cars?key=<state_number>)
-
-## POST
-
-[localhost:5000/api/v1/cars](localhost:5000/api/v1/cars)
-
-### body = {
-
-#### "state_number": "12345",
-
-#### "region": "01"
-
-#### "brand": "Corolla",
-
-#### "color": "red",
-
-### }
-
-## PUT
-
-[localhost:5000/api/v1/cars/<eid</](localhost:5000/api/v1/cars/<id>)
-
-### body = {
-
-#### "state_number": "12345",
-
-#### "region": "01"
-
-#### "brand": "Corolla",
-
-#### "color": "red",
-
-### }
+Bind mounting `/web`, the Flask application directory, to the container in `docker-compose.yml` allows the container to access `/web` on the host file system. When the container starts, it will pick up changes to the mounted code files as they happen and update accordingly.
